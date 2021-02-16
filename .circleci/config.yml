@@ -31,6 +31,9 @@ jobs:
           command: yarn test
 
   deploy:
+    machine:
+      image: ubuntu-1604:202007-01
+
     steps:
       - run:
           command: curl -X POST -d {} ${deploy_endpoint}
