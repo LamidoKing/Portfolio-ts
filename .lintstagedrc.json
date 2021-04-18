@@ -1,0 +1,4 @@
+{
+  "*.+(js|ts|tsx|jsx)": ["pretty-quick --staged", "eslint --quiet --fix"],
+  "*.+(json|css|md|html)": ["prettier --write"]
+}

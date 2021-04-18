@@ -1,3 +1,9 @@
+[![CircleCI](https://circleci.com/gh/LamidoKing/Portfolio-ts.svg?style=svg)](https://github.com/LamidoKing/Portfolio-ts)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/bdd712d4c62f428186263849a7cb24c8)](https://www.codacy.com/gh/LamidoKing/Portfolio-ts/dashboard?utm_source=github.com&utm_medium=referral&utm_content=LamidoKing/Portfolio-ts&utm_campaign=Badge_Grade)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6d70f980-3f6a-4d3b-b224-c435b6ecbafb/deploy-status)](https://app.netlify.com/sites/distracted-bose-f9684a/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
