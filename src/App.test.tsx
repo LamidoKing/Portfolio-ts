@@ -1,9 +1,9 @@
 import React from "react"
-import { render, screen } from "./testCustomRender"
+import { render, screen } from "./testUtils"
 import App from "./App"
 
 test("renders <App />", () => {
-  render(<App />)
-  const linkElement = screen.getByText(/Hello/i)
+  render(<App />, { route: "/home" })
+  const linkElement = screen.getByText(/Mode/i)
   expect(linkElement).toBeInTheDocument()
 })

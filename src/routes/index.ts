@@ -1,4 +1,4 @@
-import Home from "../Pages/Home"
+import Home from "../pages/Home"
 
 const indexRoutes = [
   { path: "/home", component: Home },
