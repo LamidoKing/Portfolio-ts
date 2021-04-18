@@ -1,6 +1,7 @@
 body {
   background-color: black;
 }
+
 .page-loader {
   display: flex;
   align-items: center;
