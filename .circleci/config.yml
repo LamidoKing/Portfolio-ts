@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  coverage-reporter: codacy/coverage-reporter@12.1.0
 jobs:
   build:
     docker:
@@ -28,7 +30,17 @@ jobs:
 
       - run:
           name: Run test
-          command: yarn test
+          command: yarn test --coverage
+
+      - store_test_results:
+          path: coverage
+
+      - store_artifacts:
+          path: coverage
+
+      - coverage-reporter/send_report:
+          coverage-reports: 'coverage/clover.xml, coverage/lcov.info'
+          project-token: 1e09603add1444d4b64c39aea667ee53
 
   deploy:
     machine:
@@ -37,10 +49,14 @@ jobs:
     steps:
       - run:
           command: curl -X POST -d {} ${deploy_endpoint}
+  
 
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
-      - deploy
+      - deploy:
+          requires:
+            - build
+
