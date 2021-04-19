@@ -33,7 +33,8 @@ jobs:
           command: yarn test --coverage
 
       - store_test_results:
-          path: coverage
+          path: coverage/clover.xml
+          destination: /home/circleci/project/report.xml
 
   deploy:
     machine:
