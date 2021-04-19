@@ -58,6 +58,9 @@ workflows:
     jobs:
       - build
       - deploy
-  coverage:
-    jobs:
+          requires:
+            - build
       - codacy-coverage-report
+          requires:
+            - build
+
