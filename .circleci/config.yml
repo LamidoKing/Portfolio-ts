@@ -61,7 +61,4 @@ workflows:
       - deploy:
           requires:
             - build
-      - codacy-coverage-report:
-          requires:
-            - build
 
