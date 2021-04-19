@@ -34,7 +34,7 @@ jobs:
 
       - store_test_results:
           path: coverage/clover.xml
-          destination: /home/circleci/project/report.xml
+          destination: /home/circleci/project/clover.xml
 
   deploy:
     machine:
@@ -50,7 +50,7 @@ jobs:
     steps:
       - checkout
       - coverage-reporter/send_report:
-          coverage-reports: 'report.xml,coverage.info'
+          coverage-reports: 'clover.xml,coverage.info'
           project-token: 1e09603add1444d4b64c39aea667ee53
 
 workflows:
