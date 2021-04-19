@@ -55,3 +55,4 @@ workflows:
     jobs:
       - build
       - deploy
+      - codacy-coverage-report
