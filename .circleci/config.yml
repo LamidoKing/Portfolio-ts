@@ -30,7 +30,10 @@ jobs:
 
       - run:
           name: Run test
-          command: yarn test
+          command: yarn test --coverage
+
+      - store_test_results:
+          path: coverage
 
   deploy:
     machine:
