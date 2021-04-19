@@ -33,7 +33,7 @@ jobs:
           command: yarn test --coverage
 
       - store_test_results:
-          path: coverage
+          path: test-results
 
   deploy:
     machine:
