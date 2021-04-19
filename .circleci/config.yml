@@ -47,8 +47,6 @@ jobs:
           command: curl -X POST -d {} ${deploy_endpoint}
   
   codacy-coverage-report:
-    docker:
-      - image: 'circleci/openjdk:8-jdk'
     steps:
       - checkout
       - coverage-reporter/send_report:
