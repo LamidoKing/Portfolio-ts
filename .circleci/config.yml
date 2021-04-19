@@ -35,6 +35,15 @@ jobs:
       - store_test_results:
           path: coverage
 
+      - codacy-coverage-report:
+          docker:
+            - image: 'circleci/openjdk:8-jdk'
+          steps:
+            - checkout
+            - coverage-reporter/send_report:
+                coverage-reports: '/home/circleci/repo/coverage/clover.xml,coverage.info'
+                project-token: 1e09603add1444d4b64c39aea667ee53
+
   deploy:
     machine:
       image: ubuntu-1604:202007-01
@@ -43,19 +52,6 @@ jobs:
       - run:
           command: curl -X POST -d {} ${deploy_endpoint}
   
-  codacy-coverage-report:
-    docker:
-      - image: 'circleci/openjdk:8-jdk'
-    steps:
-      - checkout
-      - run:
-          name: coverage
-          command: yarn test --coverage
-      - store_test_results:
-          path: coverage
-      - coverage-reporter/send_report:
-          coverage-reports: '/home/circleci/repo/coverage/clover.xml,coverage.info'
-          project-token: 1e09603add1444d4b64c39aea667ee53
 
 workflows:
   version: 2
@@ -63,4 +59,3 @@ workflows:
     jobs:
       - build
       - deploy
-      - codacy-coverage-report
