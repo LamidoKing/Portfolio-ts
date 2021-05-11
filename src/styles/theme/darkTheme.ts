@@ -16,6 +16,15 @@ const darkTheme = createMuiTheme({
       contrastText: "#000",
     },
   },
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        "*::-webkit-scrollbar": {
+          display: "none",
+        },
+      },
+    },
+  },
 })
 
 export default darkTheme

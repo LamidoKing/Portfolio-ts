@@ -1,27 +1,25 @@
-import { render, screen, cleanup, fireEvent } from "../../testUtils"
+import { render, screen, fireEvent } from "../../testUtils"
 import ThemeChanger from "./ThemeChanger"
 
 describe("<ThemeChanger />", () => {
-  afterEach(() => cleanup())
-
   beforeEach(() => render(<ThemeChanger />))
 
   it("should Render <themeChanger /> components correctly", () => {
-    const { getByText } = screen
+    const { getByRole } = screen
 
-    expect(getByText(/Mode/i)).toBeInTheDocument()
+    const checkbox = getByRole("checkbox", { name: "theme changer" })
+
+    expect(checkbox).toBeInTheDocument()
   })
 
   it("should changer theme", () => {
-    const { getByRole, getByLabelText } = screen
+    const { getByRole } = screen
     const checkbox = getByRole("checkbox")
 
     expect(checkbox).toHaveProperty("checked", false)
-    expect(getByLabelText(/Light Mode/i)).toBeInTheDocument()
 
     fireEvent.click(checkbox)
 
     expect(checkbox).toHaveProperty("checked", true)
-    expect(getByLabelText(/Dark Mode/i)).toBeInTheDocument()
   })
 })

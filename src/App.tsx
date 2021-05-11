@@ -1,13 +1,10 @@
-import { Route, Switch } from "react-router-dom"
-import indexRoutes from "./routes"
+import { appRoutes, MapRoutes } from "./routes"
 
 const App = () => {
   return (
-    <Switch>
-      {indexRoutes.map((page) => (
-        <Route path={page.path} component={page.component} key={page.path} />
-      ))}
-    </Switch>
+    <>
+      <MapRoutes routes={appRoutes} />
+    </>
   )
 }
 

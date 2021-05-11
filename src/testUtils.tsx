@@ -1,16 +1,24 @@
-/* eslint-disable react/prop-types */
-import { FC, ReactElement } from "react"
+import { FC, ReactElement, ReactNode } from "react"
 import { render, RenderOptions } from "@testing-library/react"
-import { MemoryRouter } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import ThemeProvider from "./theme/ThemeProvider"
 
-const Wrapper: FC = ({ children }) => {
+interface Props {
+  children?: ReactNode
+}
+
+const defaultProps = {
+  children: <></>,
+}
+const Wrapper: FC = ({ children }: Props) => {
   return (
-    <MemoryRouter>
+    <BrowserRouter>
       <ThemeProvider>{children}</ThemeProvider>
-    </MemoryRouter>
+    </BrowserRouter>
   )
 }
+
+Wrapper.defaultProps = defaultProps
 
 const customRender = (
   ui: ReactElement,
