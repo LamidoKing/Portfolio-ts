@@ -1,8 +1,7 @@
-import Home from "../pages/Home"
+export { default as appRoutes } from "./appRoutes"
 
-const indexRoutes = [
-  { path: "/home", component: Home },
-  { path: "/", component: Home },
-]
+export { default as MapRoutes } from "./MapRoutes"
 
-export default indexRoutes
+export { default as pagesRoutes } from "./pagesRoutes"
+
+export { default as sidebarLinksRoutes } from "./sidebarLinksRoutes"

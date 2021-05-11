@@ -16,6 +16,15 @@ const lightTheme = createMuiTheme({
       contrastText: "#fff",
     },
   },
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        "*::-webkit-scrollbar": {
+          display: "none",
+        },
+      },
+    },
+  },
 })
 
 export default lightTheme

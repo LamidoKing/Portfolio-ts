@@ -19,7 +19,7 @@ const styles = withStyles((theme: Theme) =>
         "& + $track": {
           backgroundColor: theme.palette.secondary.main,
           opacity: 1,
-          border: `1px solid ${theme.palette.common.black}`,
+          border: `1px solid ${theme.palette.background.default}`,
         },
       },
       "&$focusVisible $thumb": {
@@ -33,7 +33,7 @@ const styles = withStyles((theme: Theme) =>
     },
     track: {
       borderRadius: 26 / 2,
-      border: `1px solid ${theme.palette.secondary.main}`,
+      border: `1px solid ${theme.palette.background.default}`,
       backgroundColor: theme.palette.secondary.main,
       opacity: 1,
       transition: theme.transitions.create(["background-color", "border"]),
